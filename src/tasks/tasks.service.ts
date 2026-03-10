@@ -83,7 +83,7 @@ export class TasksService {
       throw new NotFoundException('Task not found');
     }
   
-    if (user.role !== 'ADMIN' && task.user.id !== user.id) {
+    if (user.role !== Role.ADMIN && task.user.id !== user.id) {
       throw new ForbiddenException('You cannot delete this task');
     }
   
