@@ -109,6 +109,20 @@ The port can be configured using the `PORT` environment variable.
 
 ---
 
+## 🐳 Run the Application with Docker
+
+Build Docker image:
+
+```bash
+docker build -t taskflow-backend .
+```
+
+Run container:
+
+```bash
+docker run --name taskflow-backend --env-file .env -p 3000:3000 taskflow-backend
+```
+
 ## Example API Endpoint
 
 ### Get Tasks
@@ -131,15 +145,6 @@ Example request:
 ```
 GET /tasks?search=meeting&status=OPEN&sortBy=createdAt&order=DESC&offset=0&limit=10
 ```
-
----
-
-## Future Improvements
-
-- Unit testing with Jest
-- Rate limiting
-- Docker support
-- CI/CD pipeline
 
 ---
 
